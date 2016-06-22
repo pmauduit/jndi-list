@@ -1,0 +1,15 @@
+<Configure id='Server' class="org.eclipse.jetty.server.Server">
+  <New id="ds_georchestra" class="org.eclipse.jetty.plus.jndi.Resource">
+    <Arg><Ref refid="Server"/></Arg>
+    <Arg>jdbc/georchestra</Arg>
+    <Arg>
+      <New class="org.postgresql.ds.PGSimpleDataSource">
+        <Set name="User">geoserver</Set>
+        <Set name="Password">geoserver</Set>
+        <Set name="DatabaseName">geoserver</Set>
+        <Set name="ServerName">postgis</Set>
+        <Set name="PortNumber">5432</Set>
+      </New>
+    </Arg>
+  </New>
+</Configure>
