@@ -26,6 +26,7 @@ public class DefaultController {
        ServletOutputStream out = response.getOutputStream();
        while (nameEnum.hasMore()) {
            NameClassPair ncp = nameEnum.next();
+           out.write("List of JNDI resources in compjava:/env:\n".getBytes());
            out.write(("-\t" + ncp.getName() + "\n").getBytes());
        }
   }
